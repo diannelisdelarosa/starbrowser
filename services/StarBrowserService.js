@@ -5,7 +5,7 @@ const PeopleService = {};
 PeopleService.getPeople = {
   async getPeople() { // Servicio para hacer la petición a la api "SWAPI" a través de axios
     try {
-      const response = await axios.get("http://swapi.dev/api/people/?page=1");
+      const response = await axios.get("https://swapi.dev/api/people/?page=1");
       // En response.data es donde vienen los datos que necesito, asi que son los que devolveré al método getPeople que me llama desde el componente PeopleList
       return response.data;
     } catch (error) {
@@ -35,7 +35,7 @@ PeopleService.getPeople = {
 
       // Hago petición al apartado de planetas de SWAPI para obtener los datos del planeta
       const personPlanet = await axios.get(
-        "http://swapi.dev/api/planets/" + `${idPlanet}`
+        "https://swapi.dev/api/planets/" + `${idPlanet}`
       );
 
       // console.log(
@@ -51,7 +51,7 @@ PeopleService.getPeople = {
         const specie = response.data.species[0].split("/");
         const idSpecie = specie[specie.length - 2];
         const personSpecie = await axios.get(
-          "http://swapi.dev/api/species/" + `${idSpecie}`
+          "https://swapi.dev/api/species/" + `${idSpecie}`
         );
 
         specieData = personSpecie.data
@@ -124,7 +124,7 @@ PeopleService.getPeople = {
 
   async getMovies() { // Servicio para hacer la petición a la api "SWAPI" a través de axios
   try {
-    const response = await axios.get("http://swapi.dev/api/films");
+    const response = await axios.get("https://swapi.dev/api/films");
     // En response.data es donde vienen los datos que necesito, asi que son los que devolveré al método getPeople que me llama desde characters/index
     return response.data;
   } catch (error) {

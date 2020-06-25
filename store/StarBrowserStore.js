@@ -45,7 +45,7 @@ export const actions = {
       
       const nombre = slugado;
 
-      const allPersons = await this.$axios.$get("http://swapi.dev/api/people/");
+      const allPersons = await this.$axios.$get("https://swapi.dev/api/people/");
 
       const b = await allPersons.results.find(person => person.name === nombre);
       commit("setNamePerson", b.url);
@@ -64,7 +64,7 @@ export const actions = {
       
       const nombre = slugado;
 
-      const allMovies = await this.$axios.$get("http://swapi.dev/api/films/");
+      const allMovies = await this.$axios.$get("https://swapi.dev/api/films/");
 
       const b = await allMovies.results.find(movie => movie.title === nombre);
       commit("setNameMovie", b.url);
