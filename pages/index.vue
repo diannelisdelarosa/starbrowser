@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
+  <div>
+    <div class="container">
+      <!-- <logo /> -->
       <Welcome />
     </div>
   </div>

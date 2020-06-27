@@ -27,6 +27,12 @@ PeopleService.getPeople = {
       const response = await axios.get(`${$url}`); // sabiendo que la url será la del personaje que necesito, le digo a axios que lo utilice como url.
       //console.log("Response del servicio gePersonByID", response);
 
+      const url = response.data.url.split(":")
+      //console.log('el url ===>', url)
+
+      const urls = url[0] + 's:' + url[1]
+      //console.log('el url saneado', urls)
+
       // Como quiero mostrar cual es el planeta natal del personaje, debo separar el contenido del campo "homeworld" para sacar la id y utilizarla luego en la petición que me devolverá los datos del planeta.
       const homeWorld = response.data.homeworld.split("/");
       const idPlanet = homeWorld[homeWorld.length - 2];
@@ -103,7 +109,7 @@ PeopleService.getPeople = {
         personFullData: response.data,
         personPlanet: personPlanet.data,
         personSpecieData: specieData,
-        personFilms: filmsData
+        personFilms: filmsData,
       }
 
       return personData
