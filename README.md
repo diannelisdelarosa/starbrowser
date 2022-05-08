@@ -1,6 +1,6 @@
 # starbrowser
 
-> Proyecto para Curso Front EOI
+> Proyecto para EOI Frontend
 
 ## Build Setup
 
